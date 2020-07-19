@@ -1,5 +1,5 @@
-# 第三週 Vue 起步走
+# 第四週：元件化
 
-## HEX JS 第三週主線任務 - 產品管理頁面
+## HEX JS 第四週主線任務 - Vue 與 API 串接
 
-- [前台版面連結](https://rockalen.github.io/js-training-week3/index.html)
+- [後台版面連結](https://rockalen.github.io/js-training-week4/login.html)
