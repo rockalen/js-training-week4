@@ -65,8 +65,8 @@
                 <tr v-for="(item) in products" :key="item.id">
                     <td>{{ item.category }}</td>
                     <td>{{ item.title }}</td>
-                    <td>{{ item.origin_price }}</td>
-                    <td>{{ item.price }}</td>
+                    <td>{{ item.origin_price | money }}</td>
+                    <td>{{ item.price | money }}</td>
                     <td>
                         <span v-if="item.enabled" class="text-success d-flex align-items-center">
                             <a @click="setProductEnabled(item)" class="btn text-success p-0" href="#" role="button" :class="{'disabled':loadingBtn === item.id}">
