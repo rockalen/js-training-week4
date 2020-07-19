@@ -56,7 +56,7 @@ new Vue({
             });
         },
        
-        // 跳出新增、修改、刪除視窗函數
+        // 跳出新增、修改、刪除視窗函式
         openModal(act, item) {
             switch(act){
                 case 'new':
@@ -96,7 +96,7 @@ new Vue({
                     break;
             }
         },
-        // 設定產品啟用函數
+        // 設定產品啟用函式
         setProductEnabled(item) {    
             this.loadingBtn = item.id;       
             // 1.深層複製單筆產品資料至暫存 tempProduct
@@ -112,16 +112,17 @@ new Vue({
             // 4.使用 axios.patch API 非同步更新遠端資料
             axios.patch(api,this.tempProduct).then(() => {
             // 5.更新完成後即刷新產品列表
-                this.getProducts();
-                //this.loadingBtn = '';
+                this.getProducts();              
             }).catch((error) =>{
                 console.log(error);
             })
 
         },
+        // 登出函式
         logout() {
+            // 1.document.cookie 本地token及到期日清空
             document.cookie = `token=;expires=;path=/`;
-            // 4.登入成功後轉產品列表頁
+            // 2.登入成功後轉產品列表頁
             window.location = 'login.html';
         },         
        

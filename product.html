@@ -372,16 +372,16 @@
                     let api = `${apiUrl}/admin/ec/product`;                    
                     // 注意httpMethod要小寫
                     let httpMethod = 'post';
-                    // 更新產品api
+                    // 設定更新產品api路徑
                     if (!this.isNew) {
                         api = `${apiUrl}/admin/ec/product/${this.tempProduct.id}`;
                         httpMethod = 'patch';
                     }
                     // token已定義在created時期
                     //axios.defaults.headers.common.Authorization = `Bearer ${this.user.token}`;
-                    //axios.defaults.headers.common['Authorization'] = `Bearer ${this.user.token}`;                
-                    axios[httpMethod](api, this.tempProduct).then(() => {
-                        //$(this.$refs.productModel).modal('hide');
+                    //axios.defaults.headers.common['Authorization'] = `Bearer ${this.user.token}`;
+                    // 透過 axios[httpMethod] 執行post 或 patch 操作
+                    axios[httpMethod](api, this.tempProduct).then(() => {                      
                         $('#productModal').modal('hide');
                         // 呼叫外層更新畫面
                         this.$emit('update');
@@ -390,7 +390,7 @@
                     });
 
                 },
-                  // 參考範例加入上傳檔案
+                // 參考範例加入上傳檔案
                 uploadFile() {
                     const uploadedFile = this.$refs.file.files[0];
                     const formData = new FormData();
