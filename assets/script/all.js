@@ -54,7 +54,9 @@ new Vue({
                 this.loadingBtn = '';
                 this.isLoading = false;
             }).catch((error)=>{
-                console.log(error)
+                console.log(error.message)
+                this.isLoading = false;
+                window.location = 'login.html';
             });
         },
        
