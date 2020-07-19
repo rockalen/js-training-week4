@@ -53,6 +53,8 @@ new Vue({
                 // loading 效果清空
                 this.loadingBtn = '';
                 this.isLoading = false;
+            }).catch((error)=>{
+                console.log(error)
             });
         },
        
