@@ -72,18 +72,15 @@
                             <a @click="setProductEnabled(item)" class="btn text-success p-0" href="#" role="button" :class="{'disabled':loadingBtn === item.id}">
                                 <i class="material-icons font-size-36">toggle_on </i>                                   
                             </a>
-                            <div v-if='loadingBtn === item.id' class="spinner-border text-success" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
+                            <sup v-if='loadingBtn === item.id' class="spinner-grow spinner-grow-sm text-success" role="status">
+                            </sup>
                             <sup v-else > on</sup>
                         </span>
                         <span v-else class="text-danger d-flex align-items-center">
                             <a @click="setProductEnabled(item)" class="btn text-danger p-0" href="#" role="button" :class="{'disabled':loadingBtn === item.id}">
                                 <i class="material-icons font-size-36">toggle_off </i>                                    
                             </a>
-                            <div v-if='loadingBtn === item.id' class="spinner-border text-danger" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
+                            <sub v-if='loadingBtn === item.id' class="spinner-grow spinner-grow-sm text-danger" role="status"></sub>
                             <sub v-else > off</sub>
                         </span>
                     </td>
